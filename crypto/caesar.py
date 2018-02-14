@@ -1,30 +1,18 @@
-def alphabet_position(letter):
-    '''returns the 0-based numerical position of a letter within the alphabet varible'''
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-    letter_index = -1
-    letter_index = alphabet.index(letter.lower())
-    return letter_index
+from helpers import alphabet_position, rotate_character
 
-def rotate_character(char, rot):
-    x = -1
-    y = -1
-    base = 65   # start of upper case ord
-    x = alphabet_position(char)
-    if char.islower():
-        base = 97 # start of lower case ord
-        y = chr((x + rot) % 26 + base)
-    elif char.isupper(): 
-        y = chr((x + rot) % 26 + base)
-    else:
-        y = char
-    """y = chr((ord(char)+ rot - base) % 26 + base) -- Makes it so I don't need 
-       alphabet_position at all. """
-    return y
-
+def encrypt(text, rot):
+    e_mess =""
+    for i in text:
+        e_mess += rotate_character(i, rot)
+    return e_mess
 
 def main():
-    #print(alphabet_position("c"))
-    #print(alphabet_position("B"))
+    text_in = input("What message would you like to encrypt? ")
+    rot_in = input("How far would you like to rotate it? ")
+    rot = int(rot_in)
+    print(encrypt(text_in, rot))
+    '''print(alphabet_position("c"))
+    print(alphabet_position("B"))
     print(rotate_character("A", 1), "A 1")
     print(rotate_character("a", 1), "a 1")
     print(rotate_character("Z", 1), "Z 1")
@@ -33,6 +21,7 @@ def main():
     print(rotate_character("!", 13), "! 13")
     print(rotate_character("r", 27), "r 27")
     print(rotate_character("D", 93), "D 93")
+    '''
 
 if __name__ == "__main__":
     main()
