@@ -27,6 +27,7 @@ def rotate_character(char, rot):
 def main():
     '''main, duh'''
     print(rotate_character("a", 1))
+    print(alphabet_position("a"))
 
 if __name__ == "__main__":
     main()
