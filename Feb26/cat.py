@@ -33,9 +33,28 @@ mrpaws.name = "Mr. Paws"
 mrpaws.color = "Black with white paws"
 mrpaws.weight = 4.7
 mrpaws.voice = "Meow!"
-
 mrpaws.Cat("Mr. Paws","Black with white paws", 4.7, "Meow!")
 '''
 mrpaws.name_print()
 sally.make_sound()
 mrpaws.cat_description()
+
+class Older_Cat(Cat):
+    '''A Cat aged over 8 years with name, color, weight, voice, and illness components.'''
+
+    def __init__(self, name, color, weight, voice, illness):
+        '''A new Older_Cat with a name (string), color (string) and weight (float).'''
+
+        Cat.__init__(self, name, temperament, weight)
+        self.illness = illness
+
+    def has_illness(self):
+        '''Describes if the Older_Cat has any health conditions.'''
+        if self.illness != "none":
+            print "%s has %s. Please consult care plan." \
+            % (self.name, self.illness)
+        else:
+            print "%s has no health conditions." % self.name
+
+rosebud = Older_Cat("Rosebud", "Thin gray and brown hair", 4, "arthritis")
+print(rosebud)
