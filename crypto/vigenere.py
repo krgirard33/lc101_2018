@@ -2,7 +2,7 @@ from helpers import alphabet_position, rotate_character
 
 # vigenere
 
-def vigenere(mess, twist_key):
+def encrypt(mess, twist_key):
     '''encrypt an inputed text, using an inputed key'''
     e_mess = ""
     key_code = []
