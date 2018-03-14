@@ -151,3 +151,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Visual Code 
+.vs/ 
+.vscode/ 
