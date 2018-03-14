@@ -1,7 +1,7 @@
 def get_initials(fullname):
     """ Given a person's name, returns the person's initials (uppercase) """
     #TODO your code here
-    fullname = fullname
+    #fullname = fullname
     fullname_list = fullname.split()     # splits at each " "
     initials = "" # setting it up
 
