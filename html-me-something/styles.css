@@ -1,160 +1,23 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-*/
-
-
-/* HTML5 display-role reset for older browsers */
-
-
-/*
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    display: block;
-}
-
-body {
-    line-height: 1;
-}
-
-ol,
-ul {
-    list-style: none;
-}
-
-blockquote,
-q {
-    quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-*/
-
-
 /* My code */
 
 body {
-    background-image: url("images/wood-bg.jpg");
-    margin-left: 150px;
+    background-image: url("images/page-bg.gif");
+    /* margin-left: 150px; */
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-h1 {
-    border: 2px solid red;
-    background: red;
-    margin: 0 25 0 25;
+#title h1 {
+    border: 2px solid black;
+    color: black;
+    background-color: bisque;
+    margin: 25px 25px 0 25px;
     font-size: 3em;
     font-family: Arial, Helvetica, sans-serif;
+    border-top: 2px solid black;
+    border-right: 6px solid black;
+    border-bottom: 6px solid black;
+    border-left: 2px solid black;
+    border-radius: 12px;
 }
 
 p {
@@ -168,16 +31,20 @@ p {
 
 article {
     padding: 35px;
-    margin: 40px;
-    background-color: grey;
+    margin: 40px 40px 40px 180px;
+    background-color: black;
+    border-radius: 12px;
 }
 
 #title {
     margin: 10px;
     text-align: center;
-    background-color: black;
+    background-color:rgb(139, 68, 68);
+    background-image: url("images/code-bg.jfif");
+    background-repeat: repeat-x;
     color: white;
     border: solid black 10px;
+    border-radius: 12px;
 }
 
 #title a {
@@ -190,12 +57,20 @@ article {
 
 #sidebar {
     width: 100px;
-    height: 100%;
+    margin-top: 170px;
+    height: 300px;
     position: fixed;
     z-index: 1;
     top: 0;
-    left: 0;
-    background-color: black;
+    left: 10px;
+    background-color: rgb(139, 68, 68);
+    background-image: url("images/code-bg.jfif");
+    background-repeat: repeat-y;
+    border-top: 2px solid black;
+    border-right: 6px solid black;
+    border-bottom: 6px solid black;
+    border-left: 2px solid black;
+    border-radius: 12px;
     color: black;
     padding: 20px;
     text-align: center;
@@ -205,6 +80,11 @@ article {
     background-color: bisque;
     padding: 10px;
     border-radius: 12px;
+    border-top: 2px solid black;
+    border-right: 6px solid black;
+    border-bottom: 6px solid black;
+    border-left: 2px solid black;
+
 }
 
 #sidebar a {
@@ -215,19 +95,51 @@ article {
 
 #coco img {
     float: right;
+    border-radius: 12px;
 }
 
 #ostrich img {
     float: left;
     margin-right: 35px;
+    border-radius: 12px;
 }
 
 #footer {
     text-align: center;
     font: red bold Arial, Helvetica, sans-serif;
     color: rgb(139, 68, 68);
-    border: solid black 5px;
     background-color: rgb(139, 68, 68);
+    background-image: url("images/code-bg.jfif");
+    background-repeat: repeat-x;
     margin: 25px;
     padding: 10px;
+    border-radius: 12px;
+    border-top: 2px solid black;
+    border-right: 6px solid black;
+    border-bottom: 6px solid black;
+    border-left: 2px solid black;
+}
+
+#header {
+    text-align: center;
+    background-image: url("images/code-bg.jfif");
+    background-repeat: repeat-x;
+    /*background-color: rgb(139, 68, 68);*/
+    border-radius: 12px;
+    border-top: 2px solid black;
+    border-right: 6px solid black;
+    border-bottom: 6px solid black;
+    border-left: 2px solid black;
+    height: 145px;
+    top: 0;
+    left: 0;
+}
+
+#header h1 {
+    font: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    color: white;
+    padding: 35px;
+    
+
 }
