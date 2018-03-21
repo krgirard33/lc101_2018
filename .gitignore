@@ -155,3 +155,6 @@ venv.bak/
 # Visual Code 
 .vs/ 
 .vscode/ 
+
+# HTML 
+scratchpad.html 
