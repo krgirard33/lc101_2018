@@ -26,11 +26,13 @@ form = '''
     </head>
     <body>
       <!-- create your form here -->
+      <form>
       <label>Rotate by:
-          <input name="rot" type="text" value="0" />
-          <input name="text" type="text" />
+          <input id="rot" name="rot" type="text" value="0" />
+          <textarea name="text" type="text" placeholder="Enter message here...">{0}</textarea>
       </label>
       <input type="submit" />
+      </form>
       
     </body>
 </html>
@@ -38,16 +40,15 @@ form = '''
 
 @app.route("/", methods = ['POST'])
 def index():
-    return form 
+    return form.format('') 
 
 @app.route("/", methods = ['POST'])
 def ecrypt(rot, text):
-    rot = int(rot)
-    text = text
-    e_mess = ""
-    for character in text:
-        e_mess += rotate_string(character, rot)
-    return "<h1>{e_mess}</h1>"
+    rot = int(request.form['rot'])
+    text = request.form['text']
+    e_mess = rotate_string(rot, text)
+    return form.formated(e_mess)
+    
 
 
 app.run()
