@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-from flask import Flask
-=======
 from flask import Flask, request # this imports the Flask class from the flask module.
->>>>>>> 7b1b84c1a137e79a1e24220f687a4887073a4f7c
 
 app = Flask(__name__) 
 app.config['DEBUG'] = True
@@ -78,10 +74,6 @@ def display_form_inputs():
 
 @app.route("/")
 def index():
-<<<<<<< HEAD
-    ''' Hello World '''
-    return "Hello World in Flaskish"
-=======
     return form
 
 @app.route("/hello", methods=['POST'])
@@ -96,6 +88,5 @@ def print_orderform_values():
         resp += "<b>{key}</b>: {value}</b><br>".format(key=field, 
         value=request.form[field])
     return resp
->>>>>>> 7b1b84c1a137e79a1e24220f687a4887073a4f7c
 
 app.run()
