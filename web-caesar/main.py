@@ -47,7 +47,7 @@ def ecrypt(rot, text):
     rot = int(request.form['rot'])
     text = request.form['text']
     e_mess = rotate_string(rot, text)
-    return form.formated(e_mess)
+    return form.format(e_mess)
     
 
 
