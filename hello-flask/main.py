@@ -82,12 +82,4 @@ def hello():
     first_name = request.form['first_name']
     return '<h1>Hello, ' + first_name + '</h1>'
 
-@app.route("/form-inputs", methods=['POST'])
-def print_orderform_values():
-    resp=""
-    for field in request.form.keys():
-        resp += "<b>{key}</b>: {value}</b><br>".format(key=field, 
-        value=request.form[field])
-    return resp
-
 app.run() 
