@@ -1,10 +1,13 @@
-from flask import Flask, request
+from flask import Flask, request # this imports the Flask class from the flask module.
+import cgi
 from caesar import rotate_string
 
-app = Flask(__name__)
-app.config['DEBUG'] = True
 
-form = '''
+app = Flask(__name__) # app will be the object created by the constructor Flask. 
+
+app.config['DEBUG'] = True #  the DEBUG configuration setting for the Flask application will be enabled. 
+
+form = """
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,28 +29,29 @@ form = '''
     </head>
     <body>
       <!-- create your form here -->
-      <label>Rotate by:
-          <input name="rot" type="text" value="0" />
-          <input name="text" type="text" />
-      </label>
-      <input type="submit" />
-      
+      <form action='/encrypt' method='POST'>
+        <label>Rotate by:
+              <input name="rot" type="text" value="0" />
+              <textarea name="text" type="text" placeholer="Place message here"></textarea>
+        </label>
+        <input type="submit" />
+      </form>
     </body>
 </html>
-'''
+"""
 
-@app.route("/", methods = ['POST'])
+@app.route("/")
 def index():
-    return form 
+    return form
 
-@app.route("/", methods = ['POST'])
-def ecrypt(rot, text):
-    rot = int(rot)
-    text = text
+@app.route("/encrypt", methods = ['POST'])
+def ecrypt():
+    rot = int(request.form['rot'])
+
     e_mess = ""
-    for character in text:
+    for character in request.form['text']:
         e_mess += rotate_string(character, rot)
-    return "<h1>{e_mess}</h1>"
+    return "<h1>{0}</h1>".format(e_mess)
 
 
 app.run()
