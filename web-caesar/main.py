@@ -12,27 +12,27 @@ form = """
 <html>
     <head>
         <style>
-            form {
+            form {{
                 background-color: #eee;
                 padding: 20px;
                 margin: 0 auto;
                 width: 540px;
                 font: 16px sans-serif;
                 border-radius: 10px;
-            }
-            textarea {
+            }}
+            textarea {{
                 margin: 10px 0;
                 width: 540px;
                 height: 120px;
-            }
+            }}
         </style>
     </head>
     <body>
       <!-- create your form here -->
-      <form action='/encrypt' method='POST'>
+      <form action='/' method='POST'>
         <label>Rotate by:
               <input name="rot" type="text" value="0" />
-              <textarea name="text" type="text" placeholer="Place message here"></textarea>
+              <textarea name="text" type="text" placeholer="Place message here">{0}</textarea>
         </label>
         <input type="submit" />
       </form>
@@ -42,16 +42,17 @@ form = """
 
 @app.route("/")
 def index():
-    return form
+    return form.format('')
 
-@app.route("/encrypt", methods = ['POST'])
-def ecrypt():
+@app.route("/", methods = ['POST'])
+def encrypt():
     rot = int(request.form['rot'])
 
     e_mess = ""
     for character in request.form['text']:
         e_mess += rotate_string(character, rot)
-    return "<h1>{0}</h1>".format(e_mess)
+        e_mess=cgi.escape(e_mess)
+    return form.format(e_mess)
 
 
 app.run()
