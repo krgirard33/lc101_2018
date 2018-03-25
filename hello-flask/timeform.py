@@ -65,6 +65,7 @@ def validate_time():
 @app.route('/valid-time')
 def valid_time():
     time = request.args.get('time')
-    return '<h1>You submitted {0}. Thanks for submitting a valid time!</h1>'.format(time)
+    template = jinja_env.get_template('valid_time.html')
+    return template.render(time=time)
 
 app.run() 
