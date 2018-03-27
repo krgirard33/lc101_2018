@@ -9,17 +9,16 @@ jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir), a
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
-tasks=[]
+tasks = []
 
-@app.route('/todos', methods=['POST','GET'])
+@app.route('/todos', methods=['POST', 'GET'])
 def todos():
 
     if request.method == 'POST':
         task = request.form['task']
         tasks.append(task)
 
-
     template = jinja_env.get_template('todos.html')
-    return template.render(title='ToDos',tasks=tasks)
+    return template.render(title="TODOs", tasks=tasks)
 
 app.run()
