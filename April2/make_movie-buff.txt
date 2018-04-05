@@ -1,0 +1,40 @@
+CREATE TABLE directors (
+    director_id INTEGER Primary Key Auto_Increment,
+    first_name VARCHAR(100),
+    last_name VARCHAR(100),
+    country VARCHAR(100)
+);
+
+CREATE TABLE movies (
+    movie_id INTEGER Primary Key Auto_Increment,
+    title VARCHAR(120),
+    year INTEGER,
+    director INTEGER, 
+    Foreign Key (director_id) REFRENCES directors(director_id),
+);
+
+SELECT titles FROM movies;
+
+SELECT titles FROM movies 
+    ORDER BY year DESC;
+
+INSERT INTO directors 
+    VALUES ("Jean-Pierre", "Jeunet", "France")
+
+SELECT director_id
+    FROM directors
+    WHERE first_name LIKE "Jean-Pierre" AND last_name LIKE "Jeunet")
+
+INSERT INTO movies VALUES ("Amelie", "2001", 2);
+
+SELECT * FROM directors 
+    ORDER BY country ASC;
+
+SELECT directors.country 
+    FROM movies
+    JOIN movie.director = directors.director_id
+    WHERE title = "Amlie";
+
+SELECT movies.title, directors.first_name, directors.last_name
+    FROM movies JOIN movie.director = directors.director_id
+    ORDER BY directors.last_name;
