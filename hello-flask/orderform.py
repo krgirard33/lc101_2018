@@ -1,20 +1,11 @@
-from flask import Flask, request # this imports the Flask class from the flask module.
+from flask import Flask, request, redirect, render_template
+import cgi
+import os
+import jinja2 
 
-app = Flask(__name__) # app will be the object created by the constructor Flask. 
+app = Flask(__name__)  
 
-app.config['DEBUG'] = True #  the DEBUG configuration setting for the Flask application will be enabled. 
-
-form = """
-<html>
-   <body>
-       <form action="/hello" method="post">
-           <label for "first_name">Name: </label>
-           <input id="first-name" type="text" name="first_name" />
-           <input type="submit" />
-       </form>
-   </body>
-</html>
-"""
+app.config['DEBUG'] = True 
 
 @app.route("/form-inputs")
 def display_form_inputs():

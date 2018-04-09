@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, render_template
 import cgi
 import os
 import jinja2
@@ -18,7 +18,6 @@ def todos():
         task = request.form['task']
         tasks.append(task)
 
-    template = jinja_env.get_template('todos.html')
-    return template.render(title="TODOs", tasks=tasks)
+    return render_template('todos.html', title="TODOs", tasks=tasks)
 
 app.run()
